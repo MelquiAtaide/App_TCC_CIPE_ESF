@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { LoginScreen } from './src/screens/login';
+import { useColorScheme } from 'react-native';
+
+import { ThemeProvider } from 'styled-components/native';
+import { LoadingScreen } from './src/screens/loading';
+import temas from './src/theme';
 
 export default function App() {
+  // verifica se o dispositivo está com o tema dark ou light
+  const temaDispositivo = useColorScheme();
+
+  // const tema = temas[temaDispositivo] || temas.light;
+  const tema = temaDispositivo ? temas[temaDispositivo] : temas.light;
+  
   return (
-    <View style={styles.container}>
-      <Text>Testando o EXPO</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={ tema }>
+      <LoginScreen/>
+      {/* <LoadingScreen/> */}
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
