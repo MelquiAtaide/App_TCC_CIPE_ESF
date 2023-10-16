@@ -1,24 +1,49 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-    flex:1;
-    background-color: ${props => props.theme.background};
-    color: ${props => props.theme.color};
+export const AcaoContainer = styled.View`
+    margin-top: 20px;
+    width: 100%;
+    font-size: 11px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+`;
+export const BotaoContainer = styled.View`
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+`;
+export const BotaoCadastro = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
+    border: 2px solid #73CAC2;
+    border-radius: 5px;
+    width: 48%;
+    height: 50px;
 `;
-
-export const Titulo = styled.Text`
-    color: #000000;
-    padding: 15px;
-    /* font-family: Istok Web; */
-    font-size: 24px;
-    font-weight: 700;
-    /* line-height: 35px; */
-    /* text-align: left; */
-
+export const BotaoEntrar = styled.TouchableOpacity`
+    align-items: center;
+    justify-content: center;
+    background-color: #73CAC2;
+    border-radius: 5px;
+    width: 48%;
+    height: 50px;
 `;
-
-export const Logo = styled.Image`
-    width: 60%;
+export const TextoCadastro = styled.Text`
+    font-size: 18px;
+    color: #73CAC2;
+    font-weight: bold;
+`;
+export const TextoEntrar = styled.Text`
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+`;
+export const CheckBoxContainer = styled.View`
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
 `;

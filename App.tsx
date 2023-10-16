@@ -4,6 +4,7 @@ import { useColorScheme } from 'react-native';
 
 import { ThemeProvider } from 'styled-components/native';
 import { LoadingScreen } from './src/screens/loading';
+import { NavegacaoLogin } from './src/navigations/NavegacaoLogin';
 import temas from './src/theme';
 
 export default function App() {
@@ -15,8 +16,8 @@ export default function App() {
   
   return (
     <ThemeProvider theme={ tema }>
-      <LoginScreen/>
-      {/* <LoadingScreen/> */}
+      {/* <LoginScreen/> */}
+      <NavegacaoLogin/>
     </ThemeProvider>
   );
 }
