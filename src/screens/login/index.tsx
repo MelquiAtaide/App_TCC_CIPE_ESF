@@ -3,18 +3,17 @@ import { Container, Header, SubTitulo, Titulo, Input, Label, InputSenha, InputSe
 import { StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { AcaoContainer, BotaoContainer, BotaoCadastro, BotaoEntrar, TextoCadastro, TextoEntrar, CheckBoxContainer } from './styles';
 import CheckBox from '../../components/CheckBox';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { Formik } from 'formik';
 import BotaoVerSenha from '../../components/BotaoVerSenha';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { NavegacaoLoginParams } from '../../navigations/NavegacaoLogin';
+import { NavegacaoInicioParams } from '../../navigations/NavegacaoInicio';
 export interface LoginscreenProps {
 }
 
 export function LoginScreen (props: LoginscreenProps) {
     // const navigation = useNavigation();
-    type navProp = StackNavigationProp<NavegacaoLoginParams, "Login">;
+    type navProp = StackNavigationProp<NavegacaoInicioParams, "Login">;
     const navigation = useNavigation<navProp>();
 
     const [esconderSenha, setEsconderSenha] = useState(true);
