@@ -56,7 +56,8 @@ export const Acao = styled.View`
 export const AlvoContainer = styled.View`
     flex: 2;
     background-color: azul;
-    /* margin: 10px; */
+    margin-bottom: 10px;
+    margin-top: 10px;
 `;
 export const Alvo = styled.View`
     background-color: #DEDEDE;

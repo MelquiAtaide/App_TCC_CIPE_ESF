@@ -6,14 +6,14 @@ import { BotaoContainer, BotaoCadastrar, TextoCadastrar, AcaoContainer, } from '
 import BotaoVerSenha from '../../components/BotaoVerSenha';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { NavegacaoLoginParams } from '../../navigations/NavegacaoLogin';
+import { NavegacaoInicioParams } from '../../navigations/NavegacaoInicio';
 
 export interface CadastroScreenProps {
 }
 
 export function CadastroScreen (props: CadastroScreenProps) {
 
-    type navProp = StackNavigationProp<NavegacaoLoginParams, "Cadastro">;
+    type navProp = StackNavigationProp<NavegacaoInicioParams, "Cadastro">;
     const navigation = useNavigation<navProp>();
     const [esconderSenha, setEsconderSenha] = useState(true);
     const handlePasswordToggle = (visible: boolean) => {

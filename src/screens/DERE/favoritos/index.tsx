@@ -1,16 +1,17 @@
 import { Container, MainContainer } from '../../../styles/mainStyles';
+
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { HeaderHomeTermos } from '../../../components/layouts/headerHomeTermos';
 import { Termos } from '../../../components/layouts/termos';
 
-export interface ListaTermosScreenProps {
+export interface FavoritoScreenProps {
 }
 
-export function ListaTermosScreen (props: ListaTermosScreenProps) {
+export function FavoritoScreen (props: FavoritoScreenProps) {
     return(
         <Container>
-            <HeaderHomeTermos titulo='DE/RE'/>
+            <HeaderHomeTermos titulo='FAVORITOS'/>
             <MainContainer>
                 <Termos/>
             </MainContainer>

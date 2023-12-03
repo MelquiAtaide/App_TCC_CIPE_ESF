@@ -6,8 +6,10 @@ import { ThemeProvider } from 'styled-components/native';
 import { LoadingScreen } from './src/screens/loading';
 import { NavegacaoInicio } from './src/navigations/NavegacaoInicio';
 import temas from './src/theme';
-import { HomeDEREScreen } from './src/screens/DERE/homeDERE';
+// import { HomeDEREScreen } from './src/screens/DERE/homeDERE';
 import { HeaderHomeTermos } from './src/components/layouts/headerHomeTermos';
+import { FavoritoScreen } from './src/screens/DERE/favoritos';
+import { NavegacaoPrincipal } from './src/navigations/NavegacaoPrincipal';
 
 export default function App() {
   // verifica se o dispositivo está com o tema dark ou light
@@ -18,8 +20,10 @@ export default function App() {
   
   return (
     <ThemeProvider theme={ tema }>
-      {/* <NavegacaoInicio/> */}
-      <HomeDEREScreen/>
+      <NavegacaoInicio/>
+      {/* <HomeDEREScreen/> */}
+      {/* <FavoritoScreen/> */}
+      {/* <NavegacaoPrincipal/> */}
     </ThemeProvider>
   );
 }

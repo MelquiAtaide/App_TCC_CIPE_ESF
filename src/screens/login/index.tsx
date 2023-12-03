@@ -23,7 +23,7 @@ export function LoginScreen (props: LoginscreenProps) {
     };
     const handleLogin = ({email, senha}: any) => {
         if (email.trim() == 'teste' && senha.trim() == '123') {
-            navigation.navigate('Home');
+            navigation.navigate('Inicio');
             // setResultado('logado');
         }else{
             setResultado('falhou');

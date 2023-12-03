@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, StatusBar } from 'react-native';
+import { TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 // estilos
 import { Container, Titulo, TituloContainer, TermoContainer, Termo, Texto, Acao, AlvoContainer, Alvo, Favorito, FavoritoContainer } from './style';
 // icones
@@ -18,73 +18,374 @@ export function Termos (props: TermosProps) {
             <TituloContainer>
                 <Titulo>Termos</Titulo>
             </TituloContainer>
-            <TermoContainer>
-                <Termo>
-                    <Acao><Texto>Abuso de</Texto></Acao>
-                    <AlvoContainer>
-                        <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
-                        <Alvo><Texto>Drogas</Texto></Alvo>
-                        <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
-                    </AlvoContainer>
-                    <FavoritoContainer>
-                        <Favorito>
-                            <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
-                        </Favorito>
-                    </FavoritoContainer>
-                </Termo>
-                <Termo>
-                    <Acao><Texto>Abuso de</Texto></Acao>
-                    <AlvoContainer>
-                        <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
-                        <Alvo><Texto>Drogas</Texto></Alvo>
-                        <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
-                    </AlvoContainer>
-                    <FavoritoContainer>
-                        <Favorito>
-                            <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
-                        </Favorito>
-                    </FavoritoContainer>
-                </Termo>
-                <Termo>
-                    <Acao><Texto>Abuso de</Texto></Acao>
-                    <AlvoContainer>
-                        <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
-                        <Alvo><Texto>Drogas</Texto></Alvo>
-                        <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
-                    </AlvoContainer>
-                    <FavoritoContainer>
-                        <Favorito>
-                            <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
-                        </Favorito>
-                    </FavoritoContainer>
-                </Termo>
-                <Termo>
-                    <Acao><Texto>Abuso de</Texto></Acao>
-                    <AlvoContainer>
-                        <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
-                        <Alvo><Texto>Drogas</Texto></Alvo>
-                        <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
-                    </AlvoContainer>
-                    <FavoritoContainer>
-                        <Favorito>
-                            <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
-                        </Favorito>
-                    </FavoritoContainer>
-                </Termo>
-                <Termo>
-                    <Acao><Texto>Abuso de</Texto></Acao>
-                    <AlvoContainer>
-                        <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
-                        <Alvo><Texto>Drogas</Texto></Alvo>
-                        <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
-                    </AlvoContainer>
-                    <FavoritoContainer>
-                        <Favorito>
-                            <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
-                        </Favorito>
-                    </FavoritoContainer>
-                </Termo>
-            </TermoContainer>
+            <ScrollView>
+                <TermoContainer>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                    <Termo>
+                        <Acao><Texto>Abuso de</Texto></Acao>
+                        <AlvoContainer>
+                            <Alvo><Texto>Álcool (ou Alcoolismo)</Texto></Alvo>
+                            <Alvo><Texto>Drogas</Texto></Alvo>
+                            <Alvo><Texto>Tabaco (ou de Fumo)</Texto></Alvo>
+                        </AlvoContainer>
+                        <FavoritoContainer>
+                            <Favorito>
+                                <MaterialIcons name="favorite-border" size={30} color="#37A69C"/>
+                            </Favorito>
+                        </FavoritoContainer>
+                    </Termo>
+                </TermoContainer>
+            </ScrollView>
         </Container>
     )
 }

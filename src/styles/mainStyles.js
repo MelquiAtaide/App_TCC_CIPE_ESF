@@ -81,3 +81,10 @@ export const InputSenhaContainer = styled.View`
     background-color: #EDEDED;
     border-radius: 5px;
 `;
+export const MainContainer = styled.View`
+    flex: 6;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;

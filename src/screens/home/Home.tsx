@@ -26,7 +26,7 @@ export function HomeScreen (props: HomeScreenProps) {
             </HeaderHome>
             <MainContainer>
                 <BotoesMain>
-                    <TituloBotoes onPress={() => navigation.navigate("HomeDERE")}>- DE|RE -</TituloBotoes>
+                    <TituloBotoes onPress={() => navigation.navigate("ListaTermos")}>- DE|RE -</TituloBotoes>
                     <SubtituloDE>Diagnósticos e Resultados de Enfermagem</SubtituloDE>
                 </BotoesMain>
                 <BotoesMain>

@@ -6,15 +6,16 @@ import { LoginScreen } from '../screens/login';
 import { CadastroScreen } from '../screens/cadastro';
 import { RecuperarSenhaScreen } from '../screens/recuperarSenha';
 import { HomeScreen } from '../screens/home/Home';
-import { HomeDEREScreen } from '../screens/DERE/homeDERE';
+import { ListaTermosScreen } from '../screens/DERE/homeDERE';
+import { NavegacaoPrincipal } from './NavegacaoPrincipal';
 
 const Stack = createStackNavigator();
 export type NavegacaoInicioParams = {
     Login: undefined,
     Cadastro: undefined,
     RecuperarSenha: undefined,
-    Home: undefined,
-    HomeDERE: undefined
+    Inicio: undefined,
+    ListaTermos: undefined
 }
 
 export const NavegacaoInicio = () => (
@@ -23,13 +24,13 @@ export const NavegacaoInicio = () => (
             <Stack.Screen name="Login" component={LoginScreen}/>
             <Stack.Screen name="Cadastro" component={CadastroScreen} />
             <Stack.Screen name="RecuperarSenha" component={RecuperarSenhaScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: true, 
+            <Stack.Screen name="Inicio" component={HomeScreen} options={{headerShown: true, 
                                                                         title:"CIPE-ESF", 
                                                                         headerStyle: { backgroundColor: "#73CAC2"}, 
                                                                         headerTitleAlign: "center", 
                                                                         headerTitleStyle:{color: '#FFFFFF'},
                                                                         headerLeft: () => null }} />
-            <Stack.Screen name='HomeDERE' component={HomeDEREScreen} />
+            <Stack.Screen name='ListaTermos' component={NavegacaoPrincipal} />
         </Stack.Navigator>
     </NavigationContainer>
 )
