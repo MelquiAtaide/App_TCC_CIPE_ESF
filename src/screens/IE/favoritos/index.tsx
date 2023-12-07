@@ -6,15 +6,15 @@ import { HeaderHomeTermos } from '../../../components/layouts/headerHomeTermos';
 import { Termos } from '../../../components/layouts/termos';
 import { TermosFavoritos } from '../../../components/layouts/termosFavoritos';
 
-export interface FavoritoScreenProps {
+export interface FavoritoIEScreenProps {
 }
 
-export function FavoritoScreen (props: FavoritoScreenProps) {
+export function FavoritoIEScreen (props: FavoritoIEScreenProps) {
     return(
         <Container>
             <HeaderHomeTermos titulo='FAVORITOS'/>
             <MainContainer>
-                <TermosFavoritos categoria={1}/>
+                <TermosFavoritos categoria={2}/>
             </MainContainer>
         </Container>
     )

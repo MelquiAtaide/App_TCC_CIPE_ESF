@@ -77,7 +77,7 @@ export function LoginScreen (props: LoginscreenProps) {
                             />
                             <BotaoVerSenha onToggle={handlePasswordToggle} />
                         </InputSenhaContainer>
-                        <AcaoContainer>
+                        {/* <AcaoContainer>
                             <CheckBoxContainer>
                                 <CheckBox/>
                                 <Text style={{paddingLeft: 5}}>Lembrar minha senha</Text>
@@ -85,7 +85,7 @@ export function LoginScreen (props: LoginscreenProps) {
                             <TouchableOpacity onPress={() => navigation.navigate("RecuperarSenha")}>
                                 <Text>Esqueci minha senha</Text>
                             </TouchableOpacity>
-                        </AcaoContainer>
+                        </AcaoContainer> */}
                         <BotaoContainer>
                             <BotaoCadastro onPress={() => navigation.navigate("Cadastro")}>
                                 <TextoCadastro>Cadastre-se</TextoCadastro>

@@ -12,7 +12,7 @@ export function ListaTermosIEScreen (props: ListaTermosIEScreenProps) {
         <Container>
             <HeaderHomeTermos titulo='IE'/>
             <MainContainer>
-                <Termos/>
+                <Termos categoria={2}/>
             </MainContainer>
         </Container>
     )

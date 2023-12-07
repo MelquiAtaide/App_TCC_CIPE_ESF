@@ -12,7 +12,7 @@ export function ListaTermosScreen (props: ListaTermosScreenProps) {
         <Container>
             <HeaderHomeTermos titulo='DE/RE'/>
             <MainContainer>
-                <Termos/>
+                <Termos categoria={1}/>
             </MainContainer>
         </Container>
     )

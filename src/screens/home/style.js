@@ -15,7 +15,7 @@ export const IconeInfo = styled.TouchableOpacity`
 `;
 export const ImgPerfil = styled.Image`
     flex: 1;
-    width: 70%;
+    width: 60%;
     height: 90%;
     align-items: center;
     justify-content: center;

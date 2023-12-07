@@ -9,6 +9,8 @@ import { HomeScreen } from '../screens/home/Home';
 import { ListaTermosScreen } from '../screens/DERE/homeDERE';
 import { NavegacaoPrincipal } from './NavegacaoPrincipal';
 import { NavegacaoPrincipalIE } from './NavegacaoPrincipalIE';
+import { InfoDEREScreen } from '../screens/info/infoDere';
+import { InfoHomeScreen } from '../screens/info/infoHome';
 
 const Stack = createStackNavigator();
 export type NavegacaoInicioParams = {
@@ -17,7 +19,10 @@ export type NavegacaoInicioParams = {
     RecuperarSenha: undefined,
     Inicio: undefined,
     ListaTermos: undefined,
-    ListaTermosIE: undefined
+    ListaTermosIE: undefined,
+    InfoDERE: undefined,
+    InfoHome: undefined,
+    
 }
 
 export const NavegacaoInicio = () => (
@@ -33,5 +38,7 @@ export const NavegacaoInicio = () => (
                                                                     headerLeft: () => null }} />
         <Stack.Screen name='ListaTermos' component={NavegacaoPrincipal} />
         <Stack.Screen name='ListaTermosIE' component={NavegacaoPrincipalIE} />
+        <Stack.Screen name="InfoDERE" component={InfoDEREScreen} options={{headerShown: true, title:"Voltar"}}/>
+        <Stack.Screen name="InfoHome" component={InfoHomeScreen} options={{headerShown: true, title:"Voltar"}}/>
     </Stack.Navigator>
 )

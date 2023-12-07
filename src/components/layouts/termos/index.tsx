@@ -667,11 +667,15 @@ interface FavoritoDTO {
   termo_id: number;
 }
 
-export interface TermosProps {}
+export interface TermosProps {
+  categoria: number;
+}
 
 export function Termos(props: TermosProps) {
+  const { categoria } = props;
   const [termos, setTermos] = useState<TermoAPI[]>([]);
   const [favoritos, setFavoritos] = useState<Favorito[]>([]);
+  const [exibirAcoes, setExibirAcoes] = useState<boolean>(false);
 
   useEffect(() => {
     async function buscarTermos() {
@@ -696,28 +700,6 @@ export function Termos(props: TermosProps) {
     buscarFavoritos();
   }, []);
 
-  const agruparTermos = (dados: TermoAPI[]): TermoData[] => {
-    const termosAgrupados: { [key: string]: TermoData } = {};
-
-    dados.forEach((termo) => {
-      const { foco, julgamento } = termo;
-
-      if (!termosAgrupados[foco.nome_eixo]) {
-        termosAgrupados[foco.nome_eixo] = {
-          id: termo.id.toString(),
-          foco: foco.nome_eixo,
-          julgamentos: julgamento ? [julgamento.nome_eixo] : [],
-        };
-      } else {
-        termosAgrupados[foco.nome_eixo].julgamentos.push(julgamento ? julgamento.nome_eixo : '');
-      }
-    });
-
-    return Object.values(termosAgrupados);
-  };
-
-  const termosAgrupados = agruparTermos(termos);
-
   const isFavorito = (termoId: number) => {
     return favoritos.some((favorito) => favorito.termo_id === termoId);
   };
@@ -725,19 +707,19 @@ export function Termos(props: TermosProps) {
   const toggleFavorito = async (termoId: number) => {
     try {
       const usuarioId: number | undefined = userData?.id;
-  
+
       if (usuarioId === undefined) {
         console.error('ID do usuário não definido.');
         return;
       }
-  
+
       const favoritoData: FavoritoDTO = {
         usuario_id: usuarioId,
         termo_id: termoId,
       };
-  
+
       const response = await Api.post('/Alterar-favoritos', favoritoData);
-  
+
       if (response.data.status === 'adicionado') {
         const novoFavorito: Favorito = {
           id: response.data.id,
@@ -747,7 +729,7 @@ export function Termos(props: TermosProps) {
           updated_at: response.data.updated_at,
           termo: response.data.termo,
         };
-  
+
         setFavoritos([...favoritos, novoFavorito]);
       } else if (response.data.status === 'removido') {
         setFavoritos(
@@ -758,42 +740,43 @@ export function Termos(props: TermosProps) {
       }
     } catch (error: any) {
       console.error('Erro ao adicionar/remover dos favoritos:', error);
-  
+
       if (axios.isAxiosError(error)) {
-        // Se for um erro do Axios, você pode acessar as propriedades específicas do AxiosError
         console.error('Detalhes do erro:', error.response?.data);
       }
     }
   };
-  
 
   return (
     <Container>
       <TituloContainer>
-        <Titulo>Termos Favoritos</Titulo>
+        <Titulo>Termos</Titulo>
       </TituloContainer>
       <TermoContainer>
         <FlatList
-          data={termosAgrupados}
-          keyExtractor={(item) => item.id}
+          data={termos.filter((termo) => termo.categoria_id === props.categoria)}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <Termo>
               <Foco>
-                <Texto>{item.foco}</Texto>
+                <Texto>{item.foco.nome_eixo}</Texto>
               </Foco>
               <JulgamentoContainer>
-                {item.julgamentos.map((julgamento, index) => (
-                  <Julgamento key={index}>
-                    <Texto>{julgamento}</Texto>
-                  </Julgamento>
-                ))}
+                <Julgamento>
+                  {props.categoria === 1 ? (
+                    <Texto>{item.julgamento?.nome_eixo}</Texto>
+                    ) : (
+                      <Texto>{item.acao?.nome_eixo}</Texto>
+                    )}
+                  {/* <Texto>{item.julgamento?.nome_eixo}</Texto> */}
+                </Julgamento>
               </JulgamentoContainer>
               <FavoritoContainer>
-                <BtnFavorito onPress={() => toggleFavorito(Number(item.id))}>
+                <BtnFavorito onPress={() => toggleFavorito(item.id)}>
                   <MaterialIcons
-                    name={isFavorito(Number(item.id)) ? 'favorite' : 'favorite-border'}
+                    name={isFavorito(item.id) ? 'favorite' : 'favorite-border'}
                     size={30}
-                    color={isFavorito(Number(item.id)) ? '#BD4F4F' : '#37A69C'}
+                    color={isFavorito(item.id) ? '#BD4F4F' : '#37A69C'}
                   />
                 </BtnFavorito>
               </FavoritoContainer>
@@ -804,3 +787,112 @@ export function Termos(props: TermosProps) {
     </Container>
   );
 }
+
+//   const agruparTermos = (dados: TermoAPI[]): TermoData[] => {
+//     const termosAgrupados: { [key: string]: TermoData } = {};
+
+//     dados.forEach((termo) => {
+//       const { foco, julgamento } = termo;
+
+//       if (!termosAgrupados[foco.nome_eixo]) {
+//         termosAgrupados[foco.nome_eixo] = {
+//           id: termo.id.toString(),
+//           foco: foco.nome_eixo,
+//           julgamentos: julgamento ? [julgamento.nome_eixo] : [],
+//         };
+//       } else {
+//         termosAgrupados[foco.nome_eixo].julgamentos.push(julgamento ? julgamento.nome_eixo : '');
+//       }
+//     });
+
+//     return Object.values(termosAgrupados);
+//   };
+
+//   const termosAgrupados = agruparTermos(termos);
+
+//   const isFavorito = (termoId: number) => {
+//     return favoritos.some((favorito) => favorito.termo_id === termoId);
+//   };
+//   const { userData } = useAuth();
+//   const toggleFavorito = async (termoId: number) => {
+//     try {
+//       const usuarioId: number | undefined = userData?.id;
+  
+//       if (usuarioId === undefined) {
+//         console.error('ID do usuário não definido.');
+//         return;
+//       }
+  
+//       const favoritoData: FavoritoDTO = {
+//         usuario_id: usuarioId,
+//         termo_id: termoId,
+//       };
+  
+//       const response = await Api.post('/Alterar-favoritos', favoritoData);
+  
+//       if (response.data.status === 'adicionado') {
+//         const novoFavorito: Favorito = {
+//           id: response.data.id,
+//           usuario_id: favoritoData.usuario_id,
+//           termo_id: favoritoData.termo_id,
+//           created_at: response.data.created_at,
+//           updated_at: response.data.updated_at,
+//           termo: response.data.termo,
+//         };
+  
+//         setFavoritos([...favoritos, novoFavorito]);
+//       } else if (response.data.status === 'removido') {
+//         setFavoritos(
+//           favoritos.filter(
+//             (favorito) => !(favorito.usuario_id === usuarioId && favorito.termo_id === termoId)
+//           )
+//         );
+//       }
+//     } catch (error: any) {
+//       console.error('Erro ao adicionar/remover dos favoritos:', error);
+  
+//       if (axios.isAxiosError(error)) {
+//         // Se for um erro do Axios, você pode acessar as propriedades específicas do AxiosError
+//         console.error('Detalhes do erro:', error.response?.data);
+//       }
+//     }
+//   };
+  
+
+//   return (
+//     <Container>
+//       <TituloContainer>
+//         <Titulo>Termos Favoritos</Titulo>
+//       </TituloContainer>
+//       <TermoContainer>
+//         <FlatList
+//           data={termosAgrupados}
+//           keyExtractor={(item) => item.id}
+//           renderItem={({ item }) => (
+//             <Termo>
+//               <Foco>
+//                 <Texto>{item.foco}</Texto>
+//               </Foco>
+//               <JulgamentoContainer>
+//                 {item.julgamentos.map((julgamento, index) => (
+//                   <Julgamento key={index}>
+//                     <Texto>{julgamento}</Texto>
+//                   </Julgamento>
+//                 ))}
+//               </JulgamentoContainer>
+//               <FavoritoContainer>
+//                 <BtnFavorito onPress={() => toggleFavorito(Number(item.id))}>
+//                   <MaterialIcons
+//                     name={isFavorito(Number(item.id)) ? 'favorite' : 'favorite-border'}
+//                     size={30}
+//                     color={isFavorito(Number(item.id)) ? '#BD4F4F' : '#37A69C'}
+//                   />
+//                 </BtnFavorito>
+//               </FavoritoContainer>
+//             </Termo>
+//           )}
+//         />
+//       </TermoContainer>
+//     </Container>
+//   );
+// }

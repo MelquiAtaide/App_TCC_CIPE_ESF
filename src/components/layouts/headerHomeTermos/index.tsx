@@ -7,19 +7,22 @@ import { HeaderContainer, Titulo, TituloConteiner } from './style';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // Componentes
-import { BotaoPesquisa } from '../../BotaoPesquisa';
+import { BotaoPesquisa } from '../../BotaoPesquisa'
+
+import { useNavigation } from '@react-navigation/native';;
 
 export interface HeaderHomeTermosProps {
     titulo: string;
 }
 
 export function HeaderHomeTermos (props: HeaderHomeTermosProps) {
+    const navegacao = useNavigation<any>();
     return(
         <HeaderContainer>
             <StatusBar backgroundColor="#73CAC2" barStyle="light-content"/>
             <TituloConteiner>
                 <Titulo>{props.titulo}</Titulo>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navegacao.navigate("InfoDERE")}>
                     <MaterialCommunityIcons name="information-outline" size={30} color="#ffffff"/>
                 </TouchableOpacity>
             </TituloConteiner>

@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavegacaoInicio } from '../NavegacaoInicio';
 import { NavegacaoPrincipal } from '../NavegacaoPrincipal';
 
@@ -12,6 +12,28 @@ export function Rotas(){
         </NavigationContainer>
     );
 }
+
+// export function Rotas() {
+//     const [auth, setAuth] = useState(true);
+  
+//     const handleLogout = () => {
+//       // Lógica para realizar o logout (por exemplo, chamar uma API, limpar tokens, etc.)
+//       // Depois de realizar o logout, atualize o estado para false
+//       setAuth(false);
+//     };
+  
+//     return (
+//       <NavigationContainer>
+//         {auth ? (
+//           <NavegacaoPrincipal onLogout={handleLogout} />
+//         ) : (
+//           <NavegacaoInicio onLogin={() => setAuth(true)} />
+//         )}
+//       </NavigationContainer>
+//     );
+//   }
+
+
 // import { NavigationContainer } from '@react-navigation/native';
 // import React, { useEffect, useState } from 'react';
 // import { useNavigation } from '@react-navigation/native';

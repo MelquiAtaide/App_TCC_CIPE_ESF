@@ -11,6 +11,7 @@ import { HomeScreen } from '../screens/home/Home';
 import { FavoritoScreen } from '../screens/DERE/favoritos';
 import { PerfilScreen } from '../screens/DERE/Perfil';
 import { ListaTermosIEScreen } from '../screens/IE/listaTermosIE';
+import { FavoritoIEScreen } from '../screens/IE/favoritos';
 
 
 const Tab = createBottomTabNavigator();
@@ -41,7 +42,7 @@ export function NavegacaoPrincipalIE(){
                 <Tab.Screen name="Home" component={ListaTermosIEScreen} options={{
                     tabBarLabel: () => null
                 }}/>
-                <Tab.Screen name='Favoritos' component={FavoritoScreen} options={{
+                <Tab.Screen name='Favoritos' component={FavoritoIEScreen} options={{
                     tabBarLabel: () => null
                 }}/>
                 <Tab.Screen name='Perfil' component={PerfilScreen} options={{

@@ -20,7 +20,7 @@ export function HomeScreen (props: HomeScreenProps) {
         <Container>
             <StatusBar backgroundColor="#73CAC2" barStyle="light-content"/>
             <HeaderHome>
-                <IconeInfo>
+                <IconeInfo onPress={() => navigation.navigate("InfoDERE")}>
                     <MaterialCommunityIcons name="information-outline" size={30} color="#73CAC2"/>
                 </IconeInfo>
                 <ImgPerfil source={require('../../assets/img/logo.png')} />
@@ -38,7 +38,7 @@ export function HomeScreen (props: HomeScreenProps) {
                     <SubtituloIE>Intervenções de Enfermagem</SubtituloIE>
                 </BotoesMain>
             </MainContainer>
-            <LogoutHome>
+            <LogoutHome onPress={() => navigation.navigate("Login")}>
                 <Text style={{fontSize: 16}}>Sair da Conta</Text>
             </LogoutHome>
         </Container>
