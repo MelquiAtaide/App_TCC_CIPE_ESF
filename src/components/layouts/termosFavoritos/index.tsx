@@ -209,7 +209,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // Componentes
 import { BotaoPesquisa } from '../../BotaoPesquisa';
-
+//usuário
+import { useAuth } from '../../../contexts/AuthContext';
 //API
 import Api from '../../../services/api';
 
@@ -263,9 +264,21 @@ interface Favorito {
   id: number;
   usuario_id: number;
   termo_id: number;
-  created_at: string;
-  updated_at: string;
-  termo: TermoAPI;
+  created_at: string | null;
+  updated_at: string | null;
+  termo?: {
+      id: number;
+      categoria_id: number;
+      foco_id: number;
+      julgamento_id: number | null;
+      acao_id: number | null;
+      created_at: string;
+      updated_at: string;
+      categoria: {};
+      foco: {};
+      julgamento: {} | null;
+      acao: {} | null;
+  };
 }
 
 interface TermoData {
@@ -273,6 +286,12 @@ interface TermoData {
   foco: string;
   julgamentos: string[];
 }
+
+interface FavoritoDTO {
+  usuario_id: number;
+  termo_id: number;
+}
+
 
 export interface TermosFavoritosProps {}
 
@@ -284,7 +303,8 @@ export function TermosFavoritos(props: TermosFavoritosProps) {
     async function buscarTermos() {
       try {
         const response = await Api.get<TermoAPI[]>('/termos');
-        setTermos(response.data);
+        const termosComJulgamento = response.data.filter((termo: { categoria_id: number; }) => termo.categoria_id === 1);
+        setTermos(termosComJulgamento);
       } catch (error) {
         console.error('Erro ao buscar termos:', error);
       }
@@ -304,25 +324,25 @@ export function TermosFavoritos(props: TermosFavoritosProps) {
   }, []);
 
   const agruparTermosFavoritos = (): TermoData[] => {
-    const termosFavoritos: TermoData[] = [];
+    const termosFavoritos: { [key: string]: TermoData } = {};
 
     favoritos.forEach((favorito) => {
       const { foco, julgamento } = favorito.termo;
 
-      const termoExistente = termosFavoritos.find((termo) => termo.id === favorito.termo.id.toString());
-
-      if (termoExistente) {
-        termoExistente.julgamentos.push(julgamento ? julgamento.nome_eixo : '');
-      } else {
-        termosFavoritos.push({
+      if (!termosFavoritos[foco.nome_eixo]) {
+        termosFavoritos[foco.nome_eixo] = {
           id: favorito.termo.id.toString(),
           foco: foco.nome_eixo,
-          julgamentos: julgamento ? [julgamento.nome_eixo] : [],
-        });
+          julgamentos: [],
+        };
+      }
+
+      if (julgamento) {
+        termosFavoritos[foco.nome_eixo].julgamentos.push(julgamento.nome_eixo);
       }
     });
 
-    return termosFavoritos;
+    return Object.values(termosFavoritos);
   };
 
   const termosFavoritos = agruparTermosFavoritos();
@@ -330,16 +350,42 @@ export function TermosFavoritos(props: TermosFavoritosProps) {
   const isFavorito = (termoId: number) => {
     return favoritos.some((favorito) => favorito.termo_id === termoId);
   };
-
+  const { userData } = useAuth();
   const toggleFavorito = async (termoId: number) => {
     try {
-      // Implemente a lógica para adicionar ou remover dos favoritos no backend
-      // Pode ser necessário enviar uma requisição POST ou DELETE para a rota de favoritos
-      console.log(`Toggle favorito para o termo ${termoId}`);
+        const usuarioId: number | undefined = userData?.id;
+
+        if (usuarioId === undefined) {
+            console.error('ID do usuário não definido.');
+            return;
+        }
+
+        const favoritoData: FavoritoDTO = {
+            usuario_id: usuarioId,
+            termo_id: termoId,
+        };
+
+        const response = await Api.post('/Alterar-favoritos', favoritoData);
+
+        if (response.data.status === 'adicionado') {
+            const novoFavorito: Favorito = {
+                id: response.data.id,
+                usuario_id: favoritoData.usuario_id,
+                termo_id: favoritoData.termo_id,
+                created_at: response.data.created_at,
+                updated_at: response.data.updated_at,
+            };
+
+            setFavoritos([...favoritos, novoFavorito]);
+        } else if (response.data.status === 'removido') {
+            setFavoritos(favoritos.filter((favorito) => !(favorito.usuario_id === usuarioId && favorito.termo_id === termoId)));
+        }
     } catch (error) {
-      console.error('Erro ao adicionar/remover dos favoritos:', error);
+        console.error('Erro ao adicionar/remover dos favoritos:', error);
     }
-  };
+};
+
+
 
   return (
     <Container>
