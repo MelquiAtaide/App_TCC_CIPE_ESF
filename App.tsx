@@ -10,6 +10,9 @@ import temas from './src/theme';
 import { HeaderHomeTermos } from './src/components/layouts/headerHomeTermos';
 import { FavoritoScreen } from './src/screens/DERE/favoritos';
 import { NavegacaoPrincipal } from './src/navigations/NavegacaoPrincipal';
+import { Rotas } from './src/navigations/routes/Rotas';
+import { NavigationContainer } from '@react-navigation/native';
+import { AuthProvider } from './src/contexts/AuthContext';
 
 export default function App() {
   // verifica se o dispositivo está com o tema dark ou light
@@ -20,10 +23,15 @@ export default function App() {
   
   return (
     <ThemeProvider theme={ tema }>
-      <NavegacaoInicio/>
+      {/* <NavegacaoInicio/> */}
       {/* <HomeDEREScreen/> */}
       {/* <FavoritoScreen/> */}
       {/* <NavegacaoPrincipal/> */}
+      {/* <NavigationContainer> */}
+      {/* </NavigationContainer> */}
+      <AuthProvider>
+        <Rotas />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

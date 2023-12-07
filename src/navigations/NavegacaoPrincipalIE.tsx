@@ -7,14 +7,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeScreen } from '../screens/home/Home';
-import { ListaTermosScreen } from '../screens/DERE/homeDERE';
+
 import { FavoritoScreen } from '../screens/DERE/favoritos';
 import { PerfilScreen } from '../screens/DERE/Perfil';
+import { ListaTermosIEScreen } from '../screens/IE/listaTermosIE';
 
 
 const Tab = createBottomTabNavigator();
 
-export function NavegacaoPrincipal(){
+export function NavegacaoPrincipalIE(){
     return(
             <Tab.Navigator screenOptions={({route}) => ({
                 headerShown: false,
@@ -37,7 +38,7 @@ export function NavegacaoPrincipal(){
                     return null;
                 },
             })}>
-                <Tab.Screen name="Home" component={ListaTermosScreen} options={{
+                <Tab.Screen name="Home" component={ListaTermosIEScreen} options={{
                     tabBarLabel: () => null
                 }}/>
                 <Tab.Screen name='Favoritos' component={FavoritoScreen} options={{
