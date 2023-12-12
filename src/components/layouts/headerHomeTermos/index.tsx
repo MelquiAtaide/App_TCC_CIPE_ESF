@@ -17,12 +17,15 @@ export interface HeaderHomeTermosProps {
 
 export function HeaderHomeTermos (props: HeaderHomeTermosProps) {
     const navegacao = useNavigation<any>();
+
+    const rota = props.titulo === 'DE/RE' ? 'InfoDERE' : 'InfoIE';
+
     return(
         <HeaderContainer>
             <StatusBar backgroundColor="#73CAC2" barStyle="light-content"/>
             <TituloConteiner>
                 <Titulo>{props.titulo}</Titulo>
-                <TouchableOpacity onPress={() => navegacao.navigate("InfoDERE")}>
+                <TouchableOpacity onPress={() => navegacao.navigate(rota)}>
                     <MaterialCommunityIcons name="information-outline" size={30} color="#ffffff"/>
                 </TouchableOpacity>
             </TituloConteiner>

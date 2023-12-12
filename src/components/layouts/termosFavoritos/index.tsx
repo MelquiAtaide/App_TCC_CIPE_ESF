@@ -340,6 +340,7 @@ export function TermosFavoritos(props: TermosFavoritosProps) {
     return favoritos.some((favorito) => favorito.termo_id === termoId);
   };
 
+
   const { userData } = useAuth();
   const toggleFavorito = async (termoId: number) => {
     try {

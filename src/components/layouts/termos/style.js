@@ -31,8 +31,11 @@ export const TermoContainer = styled.View`
 `;
 export const Termo = styled.View`
     background-color: #FFFFFF;
-    flex: 1;
+    /* flex: 1; */
+    width: 400px;
+    height: 70px;
     border-radius: 6px;
+    /* margin-top: 30px; */
     margin-bottom: 10px;
     flex-direction: row;
     justify-content: center;

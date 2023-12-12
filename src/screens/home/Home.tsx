@@ -20,7 +20,7 @@ export function HomeScreen (props: HomeScreenProps) {
         <Container>
             <StatusBar backgroundColor="#73CAC2" barStyle="light-content"/>
             <HeaderHome>
-                <IconeInfo onPress={() => navigation.navigate("InfoDERE")}>
+                <IconeInfo onPress={() => navigation.navigate("InfoHome")}>
                     <MaterialCommunityIcons name="information-outline" size={30} color="#73CAC2"/>
                 </IconeInfo>
                 <ImgPerfil source={require('../../assets/img/logo.png')} />

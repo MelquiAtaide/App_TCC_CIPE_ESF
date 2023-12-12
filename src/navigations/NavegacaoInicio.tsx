@@ -11,6 +11,7 @@ import { NavegacaoPrincipal } from './NavegacaoPrincipal';
 import { NavegacaoPrincipalIE } from './NavegacaoPrincipalIE';
 import { InfoDEREScreen } from '../screens/info/infoDere';
 import { InfoHomeScreen } from '../screens/info/infoHome';
+import { InfoIEScreen } from '../screens/info/infoIE';
 
 const Stack = createStackNavigator();
 export type NavegacaoInicioParams = {
@@ -22,6 +23,7 @@ export type NavegacaoInicioParams = {
     ListaTermosIE: undefined,
     InfoDERE: undefined,
     InfoHome: undefined,
+    InfoIE: undefined,
     
 }
 
@@ -39,6 +41,7 @@ export const NavegacaoInicio = () => (
         <Stack.Screen name='ListaTermos' component={NavegacaoPrincipal} />
         <Stack.Screen name='ListaTermosIE' component={NavegacaoPrincipalIE} />
         <Stack.Screen name="InfoDERE" component={InfoDEREScreen} options={{headerShown: true, title:"Voltar"}}/>
+        <Stack.Screen name="InfoIE" component={InfoIEScreen} options={{headerShown: true, title:"Voltar"}}/>
         <Stack.Screen name="InfoHome" component={InfoHomeScreen} options={{headerShown: true, title:"Voltar"}}/>
     </Stack.Navigator>
 )

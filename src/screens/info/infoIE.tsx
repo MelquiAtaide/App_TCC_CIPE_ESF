@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text } from 'react-native';
 
-export interface InfoDEREScreenProps {}
+export interface InfoIEScreenProps {}
 
-export function InfoDEREScreen(props: InfoDEREScreenProps) {
+export function InfoIEScreen(props: InfoIEScreenProps) {
   return (
     <View style={styles.container}>
-        <Text style={styles.titulo}>DE/RE</Text>
+        <Text style={styles.titulo}>IE</Text>
         <Image
-        source={require('../../assets/img/infoDERE.png')}
+        source={require('../../assets/img/infoIE.png')}
         style={styles.image}
-        // resizeMode="cover"
         />
     </View>
   );

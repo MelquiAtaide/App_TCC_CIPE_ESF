@@ -94,8 +94,6 @@ export function LoginScreen (props: LoginscreenProps) {
                                 <TextoEntrar>Entrar</TextoEntrar>
                             </BotaoEntrar>
                         </BotaoContainer>
-                        {/* { resultado == 'logado' && <Text>Logado com sucesso</Text>}
-                        { resultado == 'falhou' && <Text>Email ou senha incorreto</Text>} */}
                         {erroLogin && <Text>{erroLogin}</Text>}
 
                     </FormContainer>
