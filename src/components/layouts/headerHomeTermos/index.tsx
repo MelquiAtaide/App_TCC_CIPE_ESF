@@ -13,12 +13,13 @@ import { useNavigation } from '@react-navigation/native';;
 
 export interface HeaderHomeTermosProps {
     titulo: string;
+    categoria: number;
 }
 
 export function HeaderHomeTermos (props: HeaderHomeTermosProps) {
     const navegacao = useNavigation<any>();
 
-    const rota = props.titulo === 'DE/RE' ? 'InfoDERE' : 'InfoIE';
+    const rota = props.categoria === 1 ? 'InfoDERE' : 'InfoIE';
 
     return(
         <HeaderContainer>

@@ -62,6 +62,7 @@ export function LoginScreen (props: LoginscreenProps) {
                 <SubTitulo>Com o e-mail e senha para entrar</SubTitulo>
             </Header>
             <Formik
+            
                 initialValues={{email:'', senha:''}}
                 onSubmit={handleLogin}>
                 {({values, handleChange, handleSubmit}) => (

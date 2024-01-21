@@ -10,11 +10,14 @@ export interface FavoritoScreenProps {
 }
 
 export function FavoritoScreen (props: FavoritoScreenProps) {
+
+    const categoria = 1;
+
     return(
         <Container>
-            <HeaderHomeTermos titulo='FAVORITOS'/>
+            <HeaderHomeTermos titulo='FAVORITOS' categoria={categoria}/>
             <MainContainer>
-                <TermosFavoritos categoria={1}/>
+                <TermosFavoritos categoria={categoria}/>
             </MainContainer>
         </Container>
     )

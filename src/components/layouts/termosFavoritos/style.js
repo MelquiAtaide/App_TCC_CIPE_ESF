@@ -35,8 +35,8 @@ export const Termo = styled.View`
     width: 400px;
     height: 70px;
     border-radius: 6px;
+    /* margin-top: 30px; */
     margin-bottom: 10px;
-    margin-top: 30px;
     flex-direction: row;
     justify-content: center;
     align-items: center;

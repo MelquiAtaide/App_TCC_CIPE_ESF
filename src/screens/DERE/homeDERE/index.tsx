@@ -8,11 +8,14 @@ export interface ListaTermosScreenProps {
 }
 
 export function ListaTermosScreen (props: ListaTermosScreenProps) {
+
+    const categoria = 1;
+
     return(
         <Container>
-            <HeaderHomeTermos titulo='DE/RE'/>
+            <HeaderHomeTermos titulo='DE/RE' categoria={categoria}/>
             <MainContainer>
-                <Termos categoria={1}/>
+                <Termos categoria={categoria}/>
             </MainContainer>
         </Container>
     )
