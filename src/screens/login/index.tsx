@@ -37,7 +37,7 @@ export function LoginScreen (props: LoginscreenProps) {
                 senha,
             });
 
-            console.log(response.data);
+            // console.log(response.data);
             if (!response.data.erro) {
                 setUserData(response.data);
                 navigation.navigate('Inicio');
